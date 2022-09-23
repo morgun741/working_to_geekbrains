@@ -36,7 +36,8 @@ while quastion != 'w':
             list = os.listdir()
             while i < len(list):
                 new_files = list[i] + ".dubl"
-                shutil.copy(list[i], new_files)
+				if os.path.isfile(list[i]) is True:
+					shutil.copy(list[i], new_files)
                 i += 1
         if choice == 5:
             file_name = input()
